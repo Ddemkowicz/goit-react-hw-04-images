@@ -34,6 +34,7 @@ const App = props => {
       console.log(newImages);
     } catch (error) {
       setIsError(error);
+      alert(isError);
     } finally {
       setIsLoading(false);
     }
