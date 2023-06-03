@@ -6,7 +6,7 @@ const Button = props => {
   return (
     <div className="container">
       <button id="kremowka" onClick={onLoadMore} className="Button">
-        Load more
+        Load More
       </button>
     </div>
   );
