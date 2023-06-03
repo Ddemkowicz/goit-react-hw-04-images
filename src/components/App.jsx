@@ -62,6 +62,7 @@ const App = props => {
     disableBodyScroll(document.body);
     setLargeImageURL(largeImageURL);
     setTags(tags);
+    setIsModalOpen(true);
   };
 
   const closeModal = e => {
@@ -71,6 +72,20 @@ const App = props => {
       setLargeImageURL('');
     }
   };
+
+  useEffect(() => {
+    const handleKeyDown = e => {
+      if (e.code === 'Escape') {
+        closeModal(e);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const prevImagesRef = useRef();
 

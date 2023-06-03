@@ -1,20 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Modal = props => {
   const { closeModal, largeImageURL, tags, isModalOpen } = props;
-
-  useEffect(() => {
-    const closeModal = e => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    };
-    window.addEventListener('keydown', closeModal);
-    return () => {
-      window.removeEventListener('keydown', closeModal);
-    };
-  }, []);
 
   return (
     <div
