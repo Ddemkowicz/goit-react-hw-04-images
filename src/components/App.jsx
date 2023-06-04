@@ -17,7 +17,7 @@ const App = props => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [largeImageURL, setLargeImageURL] = useState('');
   const [tags, setTags] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const [scroll, setScroll] = useState(-840);
 
   const onInputChange = e => {
@@ -37,6 +37,7 @@ const App = props => {
       alert(isError);
     } finally {
       setIsLoading(false);
+      setPage(2);
     }
   };
 
@@ -116,7 +117,7 @@ const App = props => {
         <ImageGallery openModal={openModal} images={images} />
       )}
       {images.length > 0 && images.length % 12 === 0 ? (
-        <Button onLoadMore={onLoadMore} />
+        <Button id="kremowka" onLoadMore={onLoadMore} />
       ) : (
         ''
       )}

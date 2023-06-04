@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  const { onLoadMore } = props;
+  const { onLoadMore, id } = props;
   return (
     <div className="container">
-      <button id="kremowka" onClick={onLoadMore} className="Button">
+      <button id={id} onClick={onLoadMore} className="Button">
         Load More
       </button>
     </div>
